@@ -1,7 +1,7 @@
 # Hotel_SWE
 Abstract: This document describes the high-level requirements for the joint term project in the Software Engineering and Database courses. The software engineering component of the project consists in designing a web application that delivers role-based functionality and access. The database component consists in producing a database design that enables effective querying in a complex domain problem. To keep things uniform, we propose the topic which is hotel chain system management. Teams must implement the proposed projects.
 # CSCI 361 General Requirements
-• "Full stack" development meaning the implementation of both a browser based front-end and a Java server-side back-end /n
+• "Full stack" development meaning the implementation of both a browser based front-end and a Java server-side back-end
 • The server-side component must be a Java enterprise/container application, meaning it should be deployable, as a war file, to a standard Java EE server such as Apache Tomcat, TomEE, Jetty, Glassfish, WebLogic, etc.
 • The web application should interface to a relational database management system such as MySQL or PostgreSQL. An embedded database such as SQLite is not acceptable
 • The web application should enable login and user profiles and take reasonable steps to main security and data integrity
