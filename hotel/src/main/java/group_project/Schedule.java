@@ -15,7 +15,7 @@ public class Schedule {
 	        "  (emp_id, days, room_id, clean_id, start_clean, end_clean) VALUES " +
 	        " (?, ?, ?, ?, ?, ?);";
 
-		private final String conUrl = "jdbc:postgresql:HotelChains?user=postgres&password=sugaislove93";
+		private final String conUrl = "jdbc:postgresql:HotelChains?user=postgres&password= ";
 		public Connection dbconnect() {
 		Connection dbconnect = null;
 
@@ -69,7 +69,7 @@ public class Schedule {
 				
 				  Connection conn = null;
 			        try {
-			            String dbURL1 = "jdbc:postgresql:HotelChains?user=postgres&password=sugaislove93";
+			            String dbURL1 = "jdbc:postgresql:HotelChains?user=postgres&password= ";
 			            conn = DriverManager.getConnection(dbURL1);
 			            if (conn != null) {
 			                System.out.println("Connected to database of Cleaning");
@@ -107,7 +107,7 @@ public class Schedule {
 		 public void insertRecord() {
 			 System.out.println(INSERT_CLEANING_SQL);
 
-			try (Connection connection = DriverManager.getConnection("jdbc:postgresql:HotelChains?user=postgres&password=sugaislove93");
+			try (Connection connection = DriverManager.getConnection("jdbc:postgresql:HotelChains?user=postgres&password= ");
 
             PreparedStatement preparedStatement = connection.prepareStatement(INSERT_CLEANING_SQL)) {
             preparedStatement.setInt(1,8);
@@ -130,7 +130,7 @@ public class Schedule {
 		public void deleteRecord() {
 		System.out.println(DELETE_CLEANING_SQL);
 
-		try (Connection connection = DriverManager.getConnection("jdbc:postgresql:HotelChains?user=postgres&password=sugaislove93");
+		try (Connection connection = DriverManager.getConnection("jdbc:postgresql:HotelChains?user=postgres&password= ");
 
         PreparedStatement preparedStatement = connection.prepareStatement(DELETE_CLEANING_SQL);) {
         preparedStatement.setInt(1, 18);
