@@ -20,12 +20,12 @@
 
 body {
     background: url(1.png);
-    background-size: cover;   
+    background-size:cover;   
 }
 
 .loginbox{
     width: 320px;
-    height: 400px;
+    height: 380px;
     background: rgb(45, 45, 58);
     color: #fff;
     top: 50%;
