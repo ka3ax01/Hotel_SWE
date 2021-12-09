@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>login-page</title>
+        <link rel="stylesheet" type="text/css" href="reg.css">
+    <meta name="viewport" content="width=device-width, inital-scale=1.0">
+        
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+        <script type="text/javascript">
+    
+    function checking(r) {
+    if (r == "a") {
+            console.log("creating");
+            location.href = "index.html";
+        }
+    else {
+            $("#error").text("Account exists or empty input");
+    }
+}
+    
+    function getResponse() {
+    var p = $.ajax({
+        url : 'reg/items',
+        dataType : 'json',
+        success : function(r) {
+        }   
+    });
+    p.then(function (r) {
+        var x = r.reg;
+        checking(x);
+
+        })
+} 
+  
+    function register () {
+	var us = $("#logtext").val();
+	var pass = $("#passtext").val();
+    var nam = $("#nametext").val();
+    var sur = $("#surtext").val();
+    var type = $("#idtypetext").val();
+    var no = $("#idnotext").val();
+    var addr = $("#addresstext").val();
+    var hphone = $("#hphonetext").val();
+    var mphone = $("#mphonetext").val();
+	$.post("reg/items", { user: us, password: pass, name: nam, surname: sur, id_type: type, id_no: no, address: addr, home_number: hphone, mobile_number: mphone }, function() {
+    });
+}
+
+$(document).ready(function () { 
+    $("#reg").on('click', function () {
+        register();
+        setTimeout(function() { getResponse(); }, 3000);
+        
+    });
+});
+    
+    </script>
+</head>
+<body>
+<div class="rbox">
+    <div class="title">Registration</div>
+    <div class="Input-box">
+        <a>Email: </a><input type="text" placeholder="Enter your Email Here" id="logtext"><br>
+    </div>
+    <div class="Input-box">
+        <a>Password: </a><input type="password" placeholder="Enter your Password Here" id="passtext"><br>
+    </div>
+    <div class="Input-box">
+        <a>Name: </a><input type="text" placeholder="Enter your Name Here" id="nametext"><br>
+    </div>
+    <div class="Input-box">
+        <a>Surname: </a><input type="text" placeholder="Enter your Surname Here" id="surtext"><br>
+    </div>
+    <div class="Input-box">
+        <a>Id type: </a><input type="text" placeholder="Enter your ID Type Here" id="idtypetext"><br>
+    </div>
+    <div class="Input-box">
+        <a>Id number: </a><input type="text" placeholder="Enter your ID Number Here" id="idnotext"><br>
+    </div>
+    <div class="Input-box">
+        <a>Address: </a><input type="text" placeholder="Enter your Address Here" id="addresstext"><br>
+    </div>
+    <div class="Input-box">
+        <a>Home Phone Number: </a><input type="number" placeholder="Enter your Home Phone Here" id="hphonetext"><br>
+    </div>
+    <div class="Input-box">
+        <a>Mobile Phone Number: </a><input type="number" placeholder="Enter your Mobile Phone Here" id="mphonetext"><br>
+    </div>
+    <div class="Button-box">
+	    <button id="reg" type="button">Create account</button><br>
+    </div>
+	<ul id="error"></ul>
+</div>
+
+</body>
+</html>

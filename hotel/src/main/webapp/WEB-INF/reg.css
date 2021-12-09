@@ -20,14 +20,14 @@
 
 body {
     background: url(1.png);
+    z-index: -1;
     background-size:cover;   
 }
 
-.loginbox{
-    width: 320px;
-    height: 380px;
+body .rbox{
+    width: 440px;
+    height: 800px;
     background: rgb(45, 45, 58);
-    border-color: rgb(255, 0, 0);
     border-radius: 10px;
     border: 5px groove;
     color: #fff;
@@ -36,53 +36,65 @@ body {
     position: absolute;
     transform: translate(-50%, -50%);
     box-sizing: border-box;
-    padding: 70px 30px;
-    text-align: center;  
-           
-}
-
-.loginbox h1{
-    margin: 0;
-    padding: 0 0 20px;
-    text-align: center;
-    font-size: 25px;
-    color: var(--location-color);
-}
-
-.loginbox a{
-    margin: 0;
-    padding: 0;
-    font-weight: bold;
-}
-
-.loginbox button{
-    margin: 0;
-    padding: 0 5px 2px;
-    text-align: center;
-    font-size: 18px;
-    color: var(--location-color);
-    background:rgb(97, 97, 124);
+    padding: 18px;
+    text-align: left;  
     
 }
 
-.loginbox button:hover{
-    color: var(--margin);
-    background:var(--primary-color);
+.rbox .before{
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 3px;
+    width: 30px;
+    background:#ffc107;
 }
 
-.loginbox input{
+.rbox .title{
+    color: white;
+    font-size: 25px;
+    font-weight: 500;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.rbox a{
+    color: #fff;
+    margin: 0;
+    padding: 0;
+    font-weight: bold;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.rbox .Input-box{
+    margin-bottom: 12px;
     width: 100%;
-    margin-bottom: 20px;
 }
 
-.loginbox input[type="text"], input[type="password"]
+.Input-box input[type="text"], input[type="password"], input[type="number"]
 {
     border: none;
-    border-bottom: 1px solid #fff;
+    border-bottom: 1px solid white;
     background: transparent;
     outline: none;
     height: 40px;
-    color: #fff;
+    width: 350px;
+    color: white;
     font-size: 16px;
+    text-align: center;
+    
+}
 
+.button-box input[type="botton"]{
+    height: 100%;
+    width: 100%;
+    outline: none;
+    color: #fff;
+    border: none;
+    font-size: 18px;
+    font-weight: 500;
+    border-radius: 1px;
+    letter-spacing: 1px;
+    background-color: #7c5d01;
 }
