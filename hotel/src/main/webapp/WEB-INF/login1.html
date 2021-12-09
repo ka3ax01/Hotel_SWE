@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>login-page</title>
+    <link rel="stylesheet" type="text/css" href="login1.css">
+    <meta name="viewport" content="width=device-width, inital-scale=1.0">    
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+
+
+function checking(r) {
+    if (r == "a") {
+            location.href = "login/items";
+        }
+    else {
+            $("#error").text("Wrong login or password");
+    }
+}
+
+function getResponse() {
+    var p = $.ajax({
+        url : 'login/items',
+        dataType : 'json',
+        success : function(r) {
+        }   
+    });
+    p.then(function (r) {
+        var x = r.log;
+        checking(x);
+
+        })
+}
+
+function login () {
+	var us = $("#logtext").val();
+	var pass = $("#passtext").val();
+	$.post("login/items", { user: us, password: pass }, function() {
+    });
+}
+
+$(document).ready(function () { 
+    $("#log").on('click', function () {
+        login();
+        setTimeout(function() { getResponse(); }, 5000);
+        
+    });
+});
+
+	
+
+</script>
+
+
+	
+
+</head>
+<body>
+    <div class="loginbox">
+        <h1>Login</h1>
+    <a>Email:</a> <input type="text" id="logtext"><br>
+    <a>Password:</a> <input type="password" id="passtext"><br>
+	<button id="log" type="button">Log in</button><br>
+	<ul id="error"></ul>
+    </div>
+</body>
+
+</html>
