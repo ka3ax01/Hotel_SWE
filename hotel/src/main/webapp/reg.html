@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title></title>
+        
+        
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+        <script type="text/javascript">
+    
+    function checking(r) {
+    if (r == "a") {
+            console.log("creating");
+            location.href = "index.html";
+        }
+    else {
+            $("#error").text("Account exists or empty input");
+    }
+}
+    
+    function getResponse() {
+    var p = $.ajax({
+        url : 'reg/items',
+        dataType : 'json',
+        success : function(r) {
+        }   
+    });
+    p.then(function (r) {
+        var x = r.reg;
+        checking(x);
+
+        })
+} 
+  
+    function register () {
+	var us = $("#logtext").val();
+	var pass = $("#passtext").val();
+    var nam = $("#nametext").val();
+    var sur = $("#surtext").val();
+    var type = $("#idtypetext").val();
+    var no = $("#idnotext").val();
+    var addr = $("#addresstext").val();
+    var hphone = $("#hphonetext").val();
+    var mphone = $("#mphonetext").val();
+	$.post("reg/items", { user: us, password: pass, name: nam, surname: sur, id_type: type, id_no: no, address: addr, home_number: hphone, mobile_number: mphone }, function() {
+    });
+}
+
+$(document).ready(function () { 
+    $("#reg").on('click', function () {
+        register();
+        setTimeout(function() { getResponse(); }, 3000);
+        
+    });
+});
+    
+    </script>
+</head>
+<body>
+
+    Email: <input type="text" id="logtext"><br>
+    Password: <input type="text" id="passtext"><br>
+    Name: <input type="text" id="nametext"><br>
+    Surname: <input type="text" id="surtext"><br>
+    Id type: <input type="text" id="idtypetext"><br>
+    Id number: <input type="text" id="idnotext"><br>
+    Address: <input type="text" id="addresstext"><br>
+    Home Phone Number: <input type="text" id="hphonetext"><br>
+    Mobile Phone Number: <input type="text" id="mphonetext"><br>
+	<button id="reg" type="button">Create account</button><br>
+	<ul id="error"></ul>
+
+</body>
+</html>
