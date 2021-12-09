@@ -14,7 +14,7 @@ public class Manager extends User {
         "  (emp_id, days, room_id, clean_id, start_clean, end_clean) VALUES " +
         " (?, ?, ?, ?, ?, ?);";
 
-	private final String conUrl = "jdbc:postgresql:HotelChains?user=postgres&password=";
+	private final String conUrl = "jdbc:postgresql:HotelChains?user=postgres&password=sugaislove93";
 	public Connection dbconnect() {
 	Connection dbconnect = null;
 
@@ -34,10 +34,37 @@ public class Manager extends User {
 		app.updateClean(3, 6, "16:00", "17:00");
 		app.deleteRecord();
 		//app.insertRecord();
+		app.updateSalary(1, 30000);
 		app.showSchedule();
 		}
 
-	//Editing cleaning schedule 
+	//Editing salary 
+	
+	public int updateSalary(int emp_id, int salary) {
+		String SQLupdate = "UPDATE employee "
+		+ "SET salary = ?"
+		+ "WHERE emp_id = ?";
+
+
+		int rowsAffected = 0;
+
+		try (Connection conn = dbconnect();
+
+		PreparedStatement prepareStatement = conn.prepareStatement(SQLupdate)){
+		prepareStatement.setInt(1, salary);
+		prepareStatement.setInt(2, emp_id);
+
+		System.out.println("Salary updated!");
+
+
+		rowsAffected = prepareStatement.executeUpdate();
+		} catch (SQLException ex) {
+		System.err.println(ex.getMessage());
+		}
+		return rowsAffected;
+		}
+	
+	 //Editing cleaning schedule 
 	public int updateClean(int emp_id, int room_id, String start_clean, String end_clean) {
 		String SQLupdate = "UPDATE cleaning "
 		+ "SET start_clean = ?, end_clean = ? "
@@ -68,7 +95,7 @@ public class Manager extends User {
 			
 			  Connection conn = null;
 		        try {
-		            String dbURL1 = "jdbc:postgresql:HotelChains?user=postgres&password=";
+		            String dbURL1 = "jdbc:postgresql:HotelChains?user=postgres&password=sugaislove93";
 		            conn = DriverManager.getConnection(dbURL1);
 		            if (conn != null) {
 		                System.out.println("Connected to database of Cleaning");
@@ -106,7 +133,7 @@ public class Manager extends User {
 	 public void insertRecord() {
 		 System.out.println(INSERT_CLEANING_SQL);
 
-		try (Connection connection = DriverManager.getConnection("jdbc:postgresql:HotelChains?user=postgres&password=");
+		try (Connection connection = DriverManager.getConnection("jdbc:postgresql:HotelChains?user=postgres&password=sugaislove93");
 
         PreparedStatement preparedStatement = connection.prepareStatement(INSERT_CLEANING_SQL)) {
         preparedStatement.setInt(1,8);
@@ -129,7 +156,7 @@ public class Manager extends User {
 	public void deleteRecord() {
 	System.out.println(DELETE_CLEANING_SQL);
 
-	try (Connection connection = DriverManager.getConnection("jdbc:postgresql:HotelChains?user=postgres&password=");
+	try (Connection connection = DriverManager.getConnection("jdbc:postgresql:HotelChains?user=postgres&password=sugaislove93");
 
     PreparedStatement preparedStatement = connection.prepareStatement(DELETE_CLEANING_SQL);) {
     preparedStatement.setInt(1, 18);
