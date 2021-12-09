@@ -1,0 +1,68 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+:root {
+    --background-color: rgb(243, 243, 253);
+    --card-color: #394068;
+    --water-mark-color: rgba(152, 152, 152, 18);
+    --primary-color: #ffcd43;
+    --p-color: black;
+    --location-color: rgb(167, 167, 167);
+    --icon-color: #ffffff;
+    --margin: #758BFF;
+    --padding: 16px;
+    
+}
+
+body {
+    background: url(1.png);
+    background-size: cover;
+    position: relative;
+    height: 100%;
+    width: 100%;
+}
+
+
+
+/*-- Navigation Bar--*/
+nav .nav-list{
+    
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    display: flex;
+    flex-wrap: wrap;
+    
+    position: relative;
+    text-decoration: none;
+    max-height: max-content;
+    
+}
+nav .nav-list a{
+    display: inline-block;
+    position: relative;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: #000;
+    font-size: 15px;
+    padding: 3% 5%;  
+    
+        
+}
+
+.nav-list a:hover{
+    font-size: 20px;
+    color: var(--primary-color);
+}
+
+/*-- Title --*/
+
+.logo h2{
+    font-size: 50px;
+    padding: 10px 50px; 
+    color: var(--primary-color);
+}
+

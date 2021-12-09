@@ -6,29 +6,25 @@
 }
 
 :root {
-    --background-color: rgb(243, 243, 253);
-    --card-color: #394068;
+    --background-color: #313131;
+    --card-color: #404040;
     --water-mark-color: rgba(152, 152, 152, 18);
-    --primary-color: #ffcd43;
-    --p-color: black;
+    --primary-color: #FF6F00;
+    --p-color: #D5D5D5;
     --location-color: rgb(167, 167, 167);
     --icon-color: #ffffff;
     --margin: #758BFF;
     --padding: 16px;
-    
 }
 
 body {
     background-color: var(--background-color);
-    background-size: cover;
-   
 }
 
 .container {
     width: 100vw;
     min-height: 100vh;
     height: max-content;
-    
 }
 
 
@@ -40,7 +36,6 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-        
 }
 
 .logo {
@@ -66,8 +61,8 @@ body {
 }
 
 .menu-icon img {
-    width: 50%;
-    height: 50%;
+    width: 60%;
+    height: 60%;
 }
 
 
@@ -105,7 +100,7 @@ body {
     background-size: cover;
     background-position: center;
     height: 17rem;
-    background-image: url("4.png");
+    background-image: url("./images/mainImage.png");
 }
 
 .text-content {
@@ -134,7 +129,6 @@ body {
 }
 
 
-
 /*------------------- carosel ---------------------*/
 
 .carosel {
@@ -153,15 +147,14 @@ body {
     height: 7rem;
     background-position: center;
     background-size: cover;
-    
 }
 
 .image1 {
-    background-image: url("3.png");
+    background-image: url("./images/sub1.png");
 }
 
 .image2 {
-    background-image: url("5.png");
+    background-image: url("./images/sub2.png");
 }
 
 
@@ -225,7 +218,6 @@ body {
         text-decoration: none;
         margin: 0 0.8rem;
         font-size: 1rem;
-        
     }
     .menu-icon {
         display: none;
@@ -238,7 +230,6 @@ body {
         grid-template-columns: 50% 50%;
         grid-template-rows: 15% 25% 45% 15%;
         margin: auto;
-        
     }
     .heading {
         grid-column: 1/span 1;
@@ -337,7 +328,7 @@ body {
     /* -------nav bar------------- */
     .nav-bar {
         padding: 0;
-        z-index: 3;
+        z-index: 2;
         grid-row: 1/2;
         grid-column: 1/-1;
         /* border: 2px solid red; */
