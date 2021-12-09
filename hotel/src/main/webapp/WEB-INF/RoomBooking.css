@@ -74,8 +74,8 @@ nav .nav-list a{
     border-radius: 10px;
     border: 5px groove;
     color: #fff;
-    top: 290%;
-    left: 20%;
+    top: 330%;
+    left: 50%;
     position: absolute;
     transform: translate(-50%, -50%);
     box-sizing: border-box;
@@ -96,11 +96,11 @@ nav .nav-list a{
     position: relative;
     font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     color: white;
-    font-size: 15px;
+    font-size: 13px;
     padding: 3% 5%;
     text-decoration:none; 
-    left: 40%;
-    top: -40%;
+    left: 0%;
+    top: 0%;
     border-style: ridge;
     border-color: var(--primary-color);
     border-width: 3px;
