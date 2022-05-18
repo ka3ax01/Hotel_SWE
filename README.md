@@ -1,4 +1,6 @@
 ## README
+![image](https://user-images.githubusercontent.com/73340081/169135978-096a5225-41e4-4e71-981e-3e3ce2d2e67c.png)
+
 
 # Hotel_SWE
 Abstract: This document describes the high-level requirements for the joint term project in the Software Engineering and Database courses. The software engineering component of the project consists in designing a web application that delivers role-based functionality and access. The database component consists in producing a database design that enables effective querying in a complex domain problem. To keep things uniform, we propose the topic which is hotel chain system management. Teams must implement the proposed projects.
